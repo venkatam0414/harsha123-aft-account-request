@@ -1,9 +1,9 @@
 resource "aws_aft_account_request" "sandbox" {
   # Required
   account_name             = "Sandbox-Dev"
-  email                    = "sandbox-dev+aws@yourdomain.com"
+  email                    = "venkata.m0414+sandbox-dev@gmail.com"
   organizational_unit_name = "Workloads"   # or Infrastructure / Data, etc.
-  sso_email                = "sandbox-dev+aws@yourdomain.com"
+  sso_email                = "venkata.m0414+sandbox-dev@gmail.com"
   sso_first_name           = "Sandbox"
   sso_last_name            = "User"
 
