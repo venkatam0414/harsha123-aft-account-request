@@ -3,7 +3,7 @@ terraform {
 }
 
 module "sandbox_dev_001" {
-  source  = "aws-ia/control_tower_account_factory/aws//modules/aft-account-request"
+  source  = "aws-ia/control_tower_account_factory/aws//modules/aft-account-request-framework"
   version = "~> 1.15.0"
 
   control_tower_parameters = {
@@ -19,5 +19,10 @@ module "sandbox_dev_001" {
     Owner       = "Harsha"
     Environment = "Dev"
     CostCenter  = "1234"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Harsha"
+    change_reason       = "Testing sandbox account creation"
   }
 }
