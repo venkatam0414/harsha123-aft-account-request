@@ -3,7 +3,7 @@ terraform {
 }
 
 module "sandbox_dev_001" {
-  source = "./modules/aft-account-request"
+  source = "../modules/aft-account-request"
 
   control_tower_parameters = {
     AccountEmail              = "venkata.m0414+sandbox-dev@gmail.com"
