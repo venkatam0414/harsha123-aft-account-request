@@ -4,7 +4,7 @@ terraform {
 
 module "sandbox_dev_001" {
   source  = "aws-ia/control_tower_account_factory//modules/aft-account-request"
-  version = ">= 1.12.0"
+  version = "~> 1.15.0" 
 
   control_tower_parameters = {
     AccountEmail              = "venkata.m0414+sandbox-dev@gmail.com"
