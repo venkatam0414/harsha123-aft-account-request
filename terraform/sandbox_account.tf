@@ -1,21 +1,26 @@
-resource "aws_aft_account_request" "sandbox" {
-  # Required
-  account_name             = "Sandbox-Dev"
-  email                    = "venkata.m0414+sandbox-dev@gmail.com"
-  organizational_unit_name = "Workloads"   # or Infrastructure / Data, etc.
-  sso_email                = "venkata.m0414+sandbox-dev@gmail.com"
-  sso_first_name           = "Sandbox"
-  sso_last_name            = "User"
+// harsha123-aft-account-request/terraform/sandbox_account.tf
 
-  # Optional settings
-  account_id               = "" # leave blank for NEW account
-  managed_organizational_unit = "Workloads"
+terraform {
+  required_version = ">= 1.5.0"
+}
 
-  # Tags (flow to AWS)
-  tags = {
+// One account request = one module block
+module "sandbox_dev_001" {
+  // Pin to a recent AFT release
+  source = "github.com/aws-ia/terraform-aws-control_tower_account_factory//modules/aft-account-request?ref=v1.15.1"
+
+  control_tower_parameters = {
+    AccountEmail               = "venkata.m0414+sandbox-dev@gmail.com"  // must be unique in AWS
+    AccountName                = "Sandbox-Dev-001"
+    ManagedOrganizationalUnit  = "Sandbox"   // must match your existing OU name exactly
+    SSOUserEmail               = "venkata.m0414+admin@gmail.com"
+    SSOUserFirstName           = "Admin"
+    SSOUserLastName            = "User"
+  }
+
+  account_tags = {
     Owner       = "Harsha"
     Environment = "Dev"
     CostCenter  = "1234"
   }
 }
-#
