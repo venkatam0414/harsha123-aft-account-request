@@ -2,7 +2,7 @@ terraform {
   required_version = ">= 1.5.0"
 }
 
-module "sandbox_dev_002" {
+module "workload_dev_001" {
   source = "../modules/aft-account-request"
 
   control_tower_parameters = {
