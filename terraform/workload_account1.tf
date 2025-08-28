@@ -2,16 +2,16 @@ terraform {
   required_version = ">= 1.5.0"
 }
 
-module "workload_dev_001" {
+module "infrastructure_dev_001" {
   source = "../modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "venkata.m0414+sandbox-dev1@gmail.com"
-    AccountName               = "workload-Dev-001"
-    ManagedOrganizationalUnit = "workload"
-    SSOUserEmail              = "venkata.m0414+workload-dev1@gmail.com"
-    SSOUserFirstName          = "Adminworkload"
-    SSOUserLastName           = "Userworkload"
+    AccountEmail              = "venkata.m0414+infrastructure-dev1@gmail.com"
+    AccountName               = "infrastructure-Dev-001"
+    ManagedOrganizationalUnit = "infrastructure"
+    SSOUserEmail              = "venkata.m0414+infrastructure-dev1@gmail.com"
+    SSOUserFirstName          = "infrastructure"
+    SSOUserLastName           = "Userinfrastructure"
   }
 
   account_tags = {
