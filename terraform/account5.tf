@@ -2,16 +2,16 @@ terraform {
   required_version = ">= 1.5.0"
 }
 
-module "sandbox_dev_005" {  # New module name
+module "sandbox_dev_006" {  # New module name
   source = "../modules/aft-account-request"
   
   control_tower_parameters = {
-    AccountEmail              = "venkata.m0414+sandbox-dev5@gmail.com"  # New email
-    AccountName               = "sandbox-Dev-005"
+    AccountEmail              = "venkata.m0414+sandbox-dev6@gmail.com"  # New email
+    AccountName               = "sandbox-Dev-006"
     ManagedOrganizationalUnit = "sandbox"
-    SSOUserEmail              = "venkata.m0414+sandbox-dev5@gmail.com"
-    SSOUserFirstName          = "dev5"
-    SSOUserLastName           = "Userdev5"
+    SSOUserEmail              = "venkata.m0414+sandbox-dev6@gmail.com"
+    SSOUserFirstName          = "dev6"
+    SSOUserLastName           = "Userdev6"
   }
 
   account_tags = {
